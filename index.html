@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taru3211 Portfolio</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -27,6 +26,14 @@
             font-size: 48px;
             margin-bottom: 10px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        header img {
+            height: 80px;
         }
 
         header p {
@@ -50,6 +57,10 @@
             margin-bottom: 20px;
         }
 
+        h3 {
+            margin-top: 30px;
+        }
+
         .card {
             background: #f0f4ff;
             padding: 20px;
@@ -61,11 +72,14 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            margin-bottom: 25px;
         }
 
         table th, table td {
             padding: 12px;
             border-bottom: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
         }
 
         footer {
@@ -74,17 +88,22 @@
             color: #777;
             margin-top: 40px;
         }
+
+        a {
+            color: #1e3c72;
+            font-weight: 600;
+        }
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1 style="display:flex; align-items:center; gap:10px;">
+    <h1>
         Taru3211 Portfolio
-        <img src="images/poodle_icon_50.png" alt="Icon" style="height:80px;">
+        <img src="images/poodle_icon_50.png" alt="Icon">
     </h1>
-    <p>DX推進・業務改善リーダー / Power Platform・GAS・Python / 金融 × 業務効率化</p>
+    <p>DX推進・業務改善リーダー / Power Platform・GAS・Python・AI業務自動化 / 金融 × 業務効率化</p>
 </header>
 
 <section>
@@ -93,7 +112,7 @@
         <p>
             金融領域における業務改善・DX推進を中心に、<br>
             システム企画、業務標準化、内製化支援、データ活用を得意としています。<br>
-            Power Platform、GAS、Python を活用した自動化ツール開発や、<br>
+            Power Platform、GAS、Python、Make、AI API を活用した自動化ツール開発や、<br>
             事務効率化・ミス削減・法改正対応プロジェクトなどをリードしてきました。
         </p>
     </div>
@@ -105,10 +124,18 @@
     <h3>Automation / Programming</h3>
     <table>
         <tr><th>技術</th><th>内容</th><th>レベル</th></tr>
-        <tr><td>Next.js / FastAPI / PostgreSQL / AI連携</td><td>AI業務自動化システム開発（フロント〜バック〜DB〜API統合）</td><td>★★★★★</td></tr>
         <tr><td>Power Automate / Power Apps</td><td>業務改善・内製化支援</td><td>★★★★☆</td></tr>
         <tr><td>GAS</td><td>レポート自動化・データ整形</td><td>★★★★☆</td></tr>
-        <tr><td>Python</td><td>データ処理・ログ分析</td><td>★★★★☆</td></tr>
+        <tr><td>Python</td><td>データ処理・ログ分析・API処理</td><td>★★★☆☆</td></tr>
+        <tr><td>Next.js / FastAPI / PostgreSQL</td><td>AI業務自動化システム開発（フロント〜バック〜DB連携）</td><td>★★★★☆</td></tr>
+    </table>
+
+    <h3>AI / Integration</h3>
+    <table>
+        <tr><th>技術</th><th>内容</th><th>レベル</th></tr>
+        <tr><td>OpenAI API / Claude / Gemini</td><td>業務文章生成・構造化出力・資料ドラフト生成</td><td>★★★★☆</td></tr>
+        <tr><td>Make / API連携</td><td>Gmail・Slack・Google Sheets・AI APIを組み合わせた業務自動化</td><td>★★★★★</td></tr>
+        <tr><td>Google Sheets API / Slides API</td><td>スプレッドシート読込・Googleスライド反映</td><td>★★★★☆</td></tr>
     </table>
 
     <h3>Business / DX</h3>
@@ -122,6 +149,7 @@
 
 <section>
     <h2>WORKS</h2>
+
     <div class="card">
         <h3>AI月次支援資料 自動生成システム</h3>
         <p>
@@ -136,19 +164,42 @@
             <tr><th>目的</th><td>月次資料作成時間の削減、提案品質の標準化、業務効率化</td></tr>
         </table>
     </div>
+
+    <div class="card">
+        <h3>営業日報AI自動化（Make × ChatGPT × Slack × GAS）</h3>
+        <p>
+            Gmailで受信したメール内容をトリガーに、Makeを用いてデータを取得し、
+            AI（ChatGPT API）で営業日報形式へ自動整形。
+            Google Apps Script経由でスプレッドシートに蓄積し、
+            1日分のデータを定刻でSlackへ自動投稿する仕組みを構築。
+        </p>
+        <table>
+            <tr><th>使用技術</th><td>Make / Gmail / OpenAI API / GAS / Google Sheets / Slack API</td></tr>
+            <tr><th>主な機能</th><td>メール検知、AI整形、データ蓄積、定時バッチ投稿</td></tr>
+            <tr><th>効果</th><td>日報作成の自動化・入力工数削減・チーム共有の効率化</td></tr>
+        </table>
+    </div>
+
     <div class="card">
         <h3>リスク管理データ活用ツール</h3>
-        <p>リスク管理システムのデータを自動集計し、営業活動を支援。提案精度向上と収益拡大に貢献。</p>
+        <p>
+            リスク管理システムのデータを自動集計し、営業活動を支援。
+            提案精度向上と収益拡大に貢献。
+        </p>
     </div>
 
     <div class="card">
         <h3>事務効率化ワークフロー（Power Automate）</h3>
-        <p>Excel・メール依存の業務を自動化し、年間数百時間の削減を実現。</p>
+        <p>
+            Excel・メール依存の業務を自動化し、年間数百時間の削減を実現。
+        </p>
     </div>
 
     <div class="card">
         <h3>GASレポート自動生成ツール</h3>
-        <p>日次・週次レポートを自動作成し、作業時間を大幅短縮。</p>
+        <p>
+            日次・週次レポートを自動作成し、作業時間を大幅短縮。
+        </p>
     </div>
 
     <p><a href="https://github.com/yourname" target="_blank">▶ GitHub アカウントはこちら</a></p>
