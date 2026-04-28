@@ -3,196 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Detail | Taru3211 Portfolio</title>
+  <title>AI月次支援資料 自動生成システム | Taru3211 Portfolio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      color: #333;
-      line-height: 1.8;
-    }
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 36px;
-    }
-    header p {
-      margin: 0;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section {
-      background: white;
-      padding: 32px;
-      margin-bottom: 28px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-    h2 {
-      border-left: 6px solid #1e3c72;
-      padding-left: 12px;
-      margin-top: 0;
-      font-size: 24px;
-    }
-    .badge {
-      display: inline-block;
-      background: #f0f4ff;
-      color: #1e3c72;
-      padding: 6px 12px;
-      margin: 4px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-    }
-    th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      width: 180px;
-      background: #f7f9fc;
-    }
-    .flow {
-      background: #f0f4ff;
-      padding: 18px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    .links a {
-      display: inline-block;
-      margin-right: 12px;
-      color: #1e3c72;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f9fc; color: #333; line-height: 1.8; }
+    header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 60px 20px; text-align: center; }
+    header h1 { margin: 0 0 10px; font-size: 36px; }
+    header p { margin: 0; opacity: 0.9; }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    section { background: white; padding: 32px; margin-bottom: 28px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    h2 { border-left: 6px solid #1e3c72; padding-left: 12px; margin-top: 0; font-size: 24px; }
+    .flow { background: #f0f4ff; padding: 18px; border-radius: 10px; font-weight: bold; margin-top: 12px; }
+    .badge { display: inline-block; background: #f0f4ff; color: #1e3c72; padding: 6px 12px; margin: 4px; border-radius: 999px; font-size: 14px; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { border-bottom: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
+    th { width: 180px; background: #f7f9fc; }
+    a { color: #1e3c72; font-weight: bold; }
+    footer { text-align: center; padding: 30px; color: #777; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>プロジェクト名をここに入れる</h1>
-  <p>AI業務自動化 / DX推進 / 業務効率化</p>
+  <h1>AI月次支援資料 自動生成システム</h1>
+  <p>Next.js × Python/FastAPI × PostgreSQL × Google Sheets API × Google Slides API × AI API</p>
 </header>
 
 <main>
 
   <section>
-    <h2>1. プロジェクト概要</h2>
+    <h2>1. 背景</h2>
     <p>
-      このプロジェクトは、〇〇業務における〇〇の課題を解決するために作成したものです。
-      手作業で行っていた〇〇を自動化し、作業時間の削減・品質の標準化を目的としています。
+      月次のクライアント支援資料は、スプレッドシート上の数値確認、前回資料の参照、
+      打合せメモの整理、課題抽出、施策案の作成など、多くの手作業が発生します。
+      そこで、数値データ・メモ・過去資料をもとにAIが資料ドラフトを生成し、
+      Googleスライドへ反映する仕組みを作成しました。
     </p>
-
-    <table>
-      <tr><th>分類</th><td>AI業務自動化 / Webアプリ / 業務改善</td></tr>
-      <tr><th>担当範囲</th><td>要件整理、設計、実装、API連携、動作確認</td></tr>
-      <tr><th>開発形態</th><td>個人開発 / 業務改善サンプル</td></tr>
-    </table>
   </section>
 
   <section>
-    <h2>2. 解決した課題</h2>
+    <h2>2. 課題</h2>
     <ul>
-      <li>手作業による転記・集計に時間がかかっていた</li>
-      <li>担当者ごとに資料や文章の品質にばらつきがあった</li>
-      <li>複数ツール間の情報連携が手動で非効率だった</li>
+      <li>毎月の資料作成に時間がかかる</li>
+      <li>スプレッドシートから必要な数値を読み取る作業が手作業になっている</li>
+      <li>担当者によって課題整理・打ち手提案の品質にばらつきが出やすい</li>
+      <li>前回資料や打合せメモの内容を踏まえた資料作成が属人化しやすい</li>
+      <li>Googleスライドへの転記・反映作業に手間がかかる</li>
     </ul>
   </section>
 
   <section>
-    <h2>3. システム構成</h2>
+    <h2>3. 解決方法</h2>
+    <p>
+      Web画面で顧客を選択すると、事前登録されたスプレッドシートURLをもとに
+      Google Sheets APIで数値データを取得します。
+      さらに、打合せメモや前回資料PDFの内容をAIへ渡し、
+      月次支援資料の各章ドラフトを自動生成。
+      生成結果を確認・編集したうえで、Google Slides APIによりテンプレートへ反映する構成にしました。
+    </p>
+
     <div class="flow">
-      入力データ → API連携 → AI処理 → DB保存 → 出力・通知
+      顧客選択 → スプレッドシート読込 → 打合せメモ/PDF読込 → AIドラフト生成 → 画面で確認・編集 → Googleスライド反映
+    </div>
+  </section>
+
+  <section>
+    <h2>4. システム構成図</h2>
+    <p>
+      処理の流れは以下の通りです。
+    </p>
+
+    <div class="flow">
+      ① Next.js Web画面<br>
+      ↓ 顧客選択・打合せメモ入力・PDF添付<br><br>
+      ② Python / FastAPI<br>
+      ↓ Google API連携・AI生成処理・DB保存<br><br>
+      ③ Google Sheets API<br>
+      ↓ スプレッドシートから月次数値を取得<br><br>
+      ④ AI API<br>
+      ↓ 事業展開・現状確認・課題整理・打ち手・ネクストアクションを生成<br><br>
+      ⑤ PostgreSQL<br>
+      ↓ 顧客情報・生成履歴・入力内容を保存<br><br>
+      ⑥ Google Slides API<br>
+      テンプレートスライドへ文章・数値を反映
     </div>
 
     <table>
       <tr><th>フロントエンド</th><td>Next.js / React</td></tr>
       <tr><th>バックエンド</th><td>Python / FastAPI</td></tr>
       <tr><th>データベース</th><td>PostgreSQL</td></tr>
-      <tr><th>外部連携</th><td>Google API / Slack API / OpenAI API など</td></tr>
+      <tr><th>データ取得</th><td>Google Sheets API</td></tr>
+      <tr><th>資料出力</th><td>Google Slides API / Google Drive API</td></tr>
+      <tr><th>AI処理</th><td>OpenAI API / Claude / Gemini など</td></tr>
     </table>
   </section>
 
   <section>
-    <h2>4. 主な機能</h2>
-    <ul>
-      <li>データ取得・読み込み</li>
-      <li>AIによる文章生成・要約・整形</li>
-      <li>生成結果の保存・履歴管理</li>
-      <li>外部ツールへの出力・通知</li>
-    </ul>
+    <h2>5. 画面・スクリーンショット</h2>
+    <p>
+      ※必要に応じて、顧客選択画面、レポート作成画面、AI生成結果画面、Googleスライド出力結果のスクリーンショットを掲載します。
+    </p>
+
+    <div class="flow">
+      顧客選択画面 / 打合せメモ入力画面 / AIドラフト生成画面 / Googleスライド出力結果
+    </div>
   </section>
 
   <section>
-    <h2>5. 使用技術</h2>
+    <h2>6. 技術スタック</h2>
     <span class="badge">Next.js</span>
     <span class="badge">React</span>
+    <span class="badge">TypeScript</span>
     <span class="badge">Python</span>
     <span class="badge">FastAPI</span>
     <span class="badge">PostgreSQL</span>
-    <span class="badge">OpenAI API</span>
-    <span class="badge">Google API</span>
-    <span class="badge">Slack API</span>
-    <span class="badge">Make</span>
-    <span class="badge">GAS</span>
+    <span class="badge">Supabase</span>
+    <span class="badge">Google Sheets API</span>
+    <span class="badge">Google Slides API</span>
+    <span class="badge">Google Drive API</span>
+    <span class="badge">OAuth認証</span>
+    <span class="badge">AI API</span>
+    <span class="badge">PDF解析</span>
   </section>
 
   <section>
-    <h2>6. 工夫した点</h2>
+    <h2>7. 工夫した点</h2>
     <ul>
-      <li>業務担当者が使いやすいように、入力項目を最小限に整理</li>
-      <li>AIの出力が不安定にならないように、JSON形式や項目定義を明確化</li>
-      <li>エラー時に原因を追いやすいように、ログ・履歴を保存</li>
-      <li>実運用を想定し、手動確認・編集できる余地を残した</li>
+      <li>顧客を選択すると、登録済みのスプレッドシートURLが自動セットされる構成にした</li>
+      <li>スプレッドシートの列構成が変わっても対応しやすいように、列マッピングを意識した設計にした</li>
+      <li>AI生成結果をそのまま出力せず、画面上で確認・編集できる流れにした</li>
+      <li>生成履歴をDBに保存し、過去の入力・出力を追跡できるようにした</li>
+      <li>OAuth認証を用いて、Google Sheets / Slides / Drive APIと安全に連携した</li>
+      <li>スライドテンプレートに対して、文章・数値をAPI経由で反映できる構成にした</li>
     </ul>
-  </section>
-
-  <section>
-    <h2>7. 画面・処理フロー</h2>
-    <p>
-      ※ここに画面キャプチャや構成図を掲載します。
-    </p>
-    <div class="flow">
-      ① データ入力 → ② AI生成 → ③ 結果確認 → ④ 保存・出力
-    </div>
   </section>
 
   <section>
     <h2>8. 成果・効果</h2>
     <ul>
-      <li>資料作成・日報作成などの定型作業を短縮</li>
-      <li>AI活用により文章作成の初稿作成を自動化</li>
-      <li>業務フロー全体を可視化し、改善提案につなげやすくした</li>
+      <li>月次支援資料のドラフト作成を自動化</li>
+      <li>数値確認・課題整理・施策案作成の初稿作成を効率化</li>
+      <li>資料作成品質の標準化に貢献</li>
+      <li>GoogleスプレッドシートからGoogleスライドまでの転記作業を削減</li>
+      <li>Next.js・FastAPI・PostgreSQL・Google API・AI APIを組み合わせた実務向けWebアプリを構築</li>
     </ul>
   </section>
 
   <section>
     <h2>9. リンク</h2>
-    <p class="links">
-      <a href="../index.html">ポートフォリオTOPへ戻る</a>
-      <a href="https://github.com/yourname/repository" target="_blank">GitHubリポジトリ</a>
+    <p>
+      <a href="../index.html">▶ ポートフォリオTOPへ戻る</a>
+    </p>
+    <p>
+      <a href="../projects.html">▶ 成果物一覧へ戻る</a>
+    </p>
+    <p>
+      <a href="https://github.com/taru3211" target="_blank">▶ GitHubアカウント</a>
     </p>
   </section>
 
