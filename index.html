@@ -82,16 +82,36 @@
             vertical-align: top;
         }
 
+        a {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        .button-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #1e3c72;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .button-link:hover {
+            opacity: 0.85;
+        }
+
+        .center-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
             color: #777;
             margin-top: 40px;
-        }
-
-        a {
-            color: #1e3c72;
-            font-weight: 600;
         }
     </style>
 </head>
@@ -110,9 +130,9 @@
     <h2>PROFILE</h2>
     <div class="card">
         <p>
-            金融領域における業務改善・DX推進を中心に、<br>
+            業務改善・DX推進をベースに、<br>
             システム企画、業務標準化、内製化支援、データ活用を得意としています。<br>
-            Power Platform、GAS、Python、Make、AI API を活用した自動化ツール開発や、<br>
+            Next.js、FastAPI、Power Platform、GAS、Python、Make等 を活用した自動化ツール開発や、<br>
             事務効率化・ミス削減・法改正対応プロジェクトなどをリードしてきました。
         </p>
     </div>
@@ -163,6 +183,9 @@
             <tr><th>主な機能</th><td>顧客選択、スプレッドシート読込、AIドラフト生成、Googleスライド反映、生成履歴管理</td></tr>
             <tr><th>目的</th><td>月次資料作成時間の削減、提案品質の標準化、業務効率化</td></tr>
         </table>
+        <p>
+            <a href="projects/ai-monthly-report.html">▶ 詳細を見る</a>
+        </p>
     </div>
 
     <div class="card">
@@ -178,6 +201,9 @@
             <tr><th>主な機能</th><td>メール検知、AI整形、データ蓄積、定時バッチ投稿</td></tr>
             <tr><th>効果</th><td>日報作成の自動化・入力工数削減・チーム共有の効率化</td></tr>
         </table>
+        <p>
+            <a href="projects/ai-daily-report.html">▶ 詳細を見る</a>
+        </p>
     </div>
 
     <div class="card">
@@ -202,7 +228,13 @@
         </p>
     </div>
 
-    <p><a href="https://github.com/yourname" target="_blank">▶ GitHub アカウントはこちら</a></p>
+    <div class="center-link">
+        <a class="button-link" href="projects.html">成果物一覧を見る</a>
+    </div>
+
+    <p>
+        <a href="https://github.com/yourname" target="_blank">▶ GitHub アカウントはこちら</a>
+    </p>
 </section>
 
 <footer>
