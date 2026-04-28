@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>営業日報AI自動化 | Taru3211 Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 32px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      border-left: 6px solid #1e3c72;
+      padding-left: 12px;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .flow {
+      background: #f0f4ff;
+      padding: 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f0f4ff;
+      color: #1e3c72;
+      padding: 6px 12px;
+      margin: 4px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      width: 180px;
+      background: #f7f9fc;
+    }
+
+    a {
+      color: #1e3c72;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>営業日報AI自動化</h1>
+  <p>Make × ChatGPT API × Gmail × GAS × Google Sheets × Slack</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>1. 背景</h2>
+    <p>
+      営業活動や顧客対応の内容はメール・メモ・チャットなどに分散しやすく、
+      日報作成やチーム共有に手間がかかる課題がありました。
+      そこで、メール受信を起点にAIで内容を整理し、1日分を自動でSlackへ共有する仕組みを作成しました。
+    </p>
+  </section>
+
+  <section>
+    <h2>2. 課題</h2>
+    <ul>
+      <li>営業日報の作成が手作業で、担当者の負担になっていた</li>
+      <li>メール本文から要点を抜き出す作業に時間がかかっていた</li>
+      <li>日報のフォーマットや粒度が担当者によってばらつきやすかった</li>
+      <li>1日の対応内容をまとめて共有する仕組みがなかった</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. 解決方法</h2>
+    <p>
+      Gmailで対象メールを受信したタイミングでMakeが検知し、
+      メール本文をChatGPT APIへ送信。
+      AIが営業日報形式に整形した内容をGAS経由でGoogle Sheetsへ保存し、
+      定刻に1日分の内容をSlackへ自動投稿する構成にしました。
+    </p>
+
+    <div class="flow">
+      Gmail受信 → Makeで検知 → ChatGPT APIで日報化 → GAS → Google Sheets保存 → 定刻にSlack投稿
+    </div>
+  </section>
+
+  <section>
+    <h2>4. システム構成図</h2>
+    <p>
+      処理の流れは以下の通りです。
+    </p>
+
+    <div class="flow">
+      ① Gmail<br>
+      ↓ メール受信をトリガーに起動<br><br>
+      ② Make<br>
+      ↓ 本文抽出・APIリクエスト制御<br><br>
+      ③ ChatGPT API<br>
+      ↓ 日報形式に要約・整形<br><br>
+      ④ Google Apps Script<br>
+      ↓ Google Sheetsへ保存<br><br>
+      ⑤ Google Sheets<br>
+      ↓ 1日分のデータを蓄積<br><br>
+      ⑥ Slack<br>
+      定刻にチャンネルへ自動投稿
+    </div>
+
+    <table>
+      <tr><th>自動化基盤</th><td>Make</td></tr>
+      <tr><th>入力</th><td>Gmail本文</td></tr>
+      <tr><th>AI処理</th><td>ChatGPT API</td></tr>
+      <tr><th>保存先</th><td>Google Sheets</td></tr>
+      <tr><th>中継処理</th><td>Google Apps Script</td></tr>
+      <tr><th>通知先</th><td>Slack</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. 画面・スクリーンショット</h2>
+    <p>
+      ※必要に応じて、Makeのシナリオ画面、Google Sheetsの保存結果、Slack投稿結果のスクリーンショットを掲載します。
+    </p>
+
+    <div class="flow">
+      Makeシナリオ画面 / Google Sheets保存結果 / Slack通知結果
+    </div>
+  </section>
+
+  <section>
+    <h2>6. 技術スタック</h2>
+    <span class="badge">Make</span>
+    <span class="badge">Gmail</span>
+    <span class="badge">OpenAI API</span>
+    <span class="badge">ChatGPT</span>
+    <span class="badge">Google Apps Script</span>
+    <span class="badge">Google Sheets</span>
+    <span class="badge">Slack API</span>
+    <span class="badge">JSON</span>
+    <span class="badge">Webhook</span>
+  </section>
+
+  <section>
+    <h2>7. 工夫した点</h2>
+    <ul>
+      <li>ChatGPT APIの出力をJSON形式に固定し、後続処理で扱いやすくした</li>
+      <li>MakeのHTTPモジュールを使い、AI APIとの連携を柔軟に構成した</li>
+      <li>Google Sheetsに一度保存することで、1日分をまとめて投稿できるようにした</li>
+      <li>Slackには即時投稿ではなく、定刻投稿にすることで日次報告として使いやすくした</li>
+      <li>メール本文が短い場合でも、顧客名・対応内容・次回アクション・リスクを整理できるようにした</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. 成果・効果</h2>
+    <ul>
+      <li>営業日報の作成作業を自動化</li>
+      <li>メール内容から要点を自動抽出し、共有用フォーマットに整形</li>
+      <li>日報の品質・粒度を標準化</li>
+      <li>Slackへの定時投稿により、チーム内の情報共有を効率化</li>
+      <li>Make・GAS・AI APIを組み合わせた実務向け自動化フローを構築</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. リンク</h2>
+    <p>
+      <a href="../index.html">▶ ポートフォリオTOPへ戻る</a>
+    </p>
+    <p>
+      <a href="../projects.html">▶ 成果物一覧へ戻る</a>
+    </p>
+    <p>
+      <a href="https://github.com/yourname/repository" target="_blank">▶ GitHubリポジトリ</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © Taru3211 Portfolio
+</footer>
+
+</body>
+</html>
