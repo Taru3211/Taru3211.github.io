@@ -1,244 +1,318 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taru3211 Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taru3211 Portfolio | AI・業務自動化ポートフォリオ</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.8;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #f7f9fc;
-            color: #333;
-        }
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3c72);
+      color: white;
+      padding: 72px 20px;
+      text-align: center;
+    }
 
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
+    header h1 {
+      margin: 0 0 16px;
+      font-size: 40px;
+      line-height: 1.4;
+    }
 
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+    header p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: 18px;
+      opacity: 0.95;
+    }
 
-        header img {
-            height: 80px;
-        }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-        header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
+    section {
+      background: white;
+      padding: 32px;
+      margin-bottom: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
 
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
+    h2 {
+      border-left: 6px solid #1e3c72;
+      padding-left: 12px;
+      margin-top: 0;
+      font-size: 24px;
+    }
 
-        h2 {
-            font-size: 28px;
-            border-left: 6px solid #1e3c72;
-            padding-left: 12px;
-            margin-bottom: 20px;
-        }
+    .lead-box {
+      background: #eef6ff;
+      border-left: 6px solid #2563eb;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
 
-        h3 {
-            margin-top: 30px;
-        }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
 
-        .card {
-            background: #f0f4ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+    .work-card {
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 24px;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
+    .work-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0f172a;
+    }
 
-        table th, table td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-            vertical-align: top;
-        }
+    .work-card p {
+      margin: 8px 0;
+    }
 
-        a {
-            color: #1e3c72;
-            font-weight: 600;
-        }
+    .work-card strong {
+      color: #1e3c72;
+    }
 
-        .button-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 16px;
-            background: #1e3c72;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-        }
+    .tags {
+      margin: 14px 0;
+    }
 
-        .button-link:hover {
-            opacity: 0.85;
-        }
+    .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e3c72;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 4px 4px 4px 0;
+    }
 
-        .center-link {
-            text-align: center;
-            margin-top: 30px;
-        }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #1e3c72;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            margin-top: 40px;
-        }
-    </style>
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .skill {
+      background: #f0f4ff;
+      color: #1e3c72;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      width: 180px;
+      background: #f7f9fc;
+    }
+
+    a {
+      color: #1e3c72;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>
-        Taru3211 Portfolio
-        <img src="images/poodle_icon_50.png" alt="Icon">
-    </h1>
-    <p>DX推進・業務改善リーダー / Power Platform・GAS・Python・AI業務自動化 / 金融 × 業務効率化</p>
+  <h1>AI・自動化で、手作業の業務をWebアプリ／Make／GASで仕組み化します</h1>
+  <p>
+    月次資料作成・営業日報作成・データ集計など、現場業務を理解したうえで、
+    提案から設計・実装まで対応するポートフォリオです。
+  </p>
 </header>
 
-<section>
-    <h2>PROFILE</h2>
-    <div class="card">
-        <p>
-            業務改善・DX推進をベースに、<br>
-            システム企画、業務標準化、内製化支援、データ活用を得意としています。<br>
-            Next.js、FastAPI、Power Platform、GAS、Python、Make等 を活用した自動化ツール開発や、<br>
-            事務効率化・ミス削減・法改正対応プロジェクトなどをリードしてきました。
-        </p>
-    </div>
-</section>
+<main>
 
-<section>
-    <h2>SKILLS</h2>
-
-    <h3>Automation / Programming</h3>
-    <table>
-        <tr><th>技術</th><th>内容</th><th>レベル</th></tr>
-        <tr><td>Power Automate / Power Apps</td><td>業務改善・内製化支援</td><td>★★★★☆</td></tr>
-        <tr><td>GAS</td><td>レポート自動化・データ整形</td><td>★★★★☆</td></tr>
-        <tr><td>Python</td><td>データ処理・ログ分析・API処理</td><td>★★★☆☆</td></tr>
-        <tr><td>Next.js / FastAPI / PostgreSQL</td><td>AI業務自動化システム開発（フロント〜バック〜DB連携）</td><td>★★★★☆</td></tr>
-    </table>
-
-    <h3>AI / Integration</h3>
-    <table>
-        <tr><th>技術</th><th>内容</th><th>レベル</th></tr>
-        <tr><td>OpenAI API / Claude / Gemini</td><td>業務文章生成・構造化出力・資料ドラフト生成</td><td>★★★★☆</td></tr>
-        <tr><td>Make / API連携</td><td>Gmail・Slack・Google Sheets・AI APIを組み合わせた業務自動化</td><td>★★★★★</td></tr>
-        <tr><td>Google Sheets API / Slides API</td><td>スプレッドシート読込・Googleスライド反映</td><td>★★★★☆</td></tr>
-    </table>
-
-    <h3>Business / DX</h3>
-    <table>
-        <tr><th>領域</th><th>内容</th><th>レベル</th></tr>
-        <tr><td>業務改善</td><td>業務可視化・標準化・自動化</td><td>★★★★★</td></tr>
-        <tr><td>プロジェクト管理</td><td>要件定義〜開発管理</td><td>★★★★☆</td></tr>
-        <tr><td>データ活用</td><td>リスク管理データ分析・営業支援</td><td>★★★★☆</td></tr>
-    </table>
-</section>
-
-<section>
-    <h2>WORKS</h2>
-
-    <div class="card">
-        <h3>AI月次支援資料 自動生成システム</h3>
-        <p>
-            Googleスプレッドシートの数値データ、打合せメモ、前回資料PDFをもとに、
-            AIが月次支援資料のドラフトを自動生成するWebアプリを開発。
-            Next.jsによる画面、Python/FastAPIによるバックエンド処理、
-            PostgreSQLによる顧客・生成履歴管理、Google Sheets API / Slides API連携を実装。
-        </p>
-        <table>
-            <tr><th>使用技術</th><td>Next.js / React / Python / FastAPI / PostgreSQL / Google Sheets API / Google Slides API / AI API</td></tr>
-            <tr><th>主な機能</th><td>顧客選択、スプレッドシート読込、AIドラフト生成、Googleスライド反映、生成履歴管理</td></tr>
-            <tr><th>目的</th><td>月次資料作成時間の削減、提案品質の標準化、業務効率化</td></tr>
-        </table>
-        <p>
-            <a href="projects/ai-monthly-report.html">▶ 詳細を見る</a>
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>営業日報AI自動化（Make × ChatGPT × Slack × GAS）</h3>
-        <p>
-            Gmailで受信したメール内容をトリガーに、Makeを用いてデータを取得し、
-            AI（ChatGPT API）で営業日報形式へ自動整形。
-            Google Apps Script経由でスプレッドシートに蓄積し、
-            1日分のデータを定刻でSlackへ自動投稿する仕組みを構築。
-        </p>
-        <table>
-            <tr><th>使用技術</th><td>Make / Gmail / OpenAI API / GAS / Google Sheets / Slack API</td></tr>
-            <tr><th>主な機能</th><td>メール検知、AI整形、データ蓄積、定時バッチ投稿</td></tr>
-            <tr><th>効果</th><td>日報作成の自動化・入力工数削減・チーム共有の効率化</td></tr>
-        </table>
-        <p>
-            <a href="projects/ai-daily-report.html">▶ 詳細を見る</a>
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>リスク管理データ活用ツール</h3>
-        <p>
-            リスク管理システムのデータを自動集計し、営業活動を支援。
-            提案精度向上と収益拡大に貢献。
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>事務効率化ワークフロー（Power Automate）</h3>
-        <p>
-            Excel・メール依存の業務を自動化し、年間数百時間の削減を実現。
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>GASレポート自動生成ツール</h3>
-        <p>
-            日次・週次レポートを自動作成し、作業時間を大幅短縮。
-        </p>
-    </div>
-
-    <div class="center-link">
-        <a class="button-link" href="projects.html">成果物一覧を見る</a>
-    </div>
-
+  <section>
+    <h2>代表成果物</h2>
     <p>
-        <a href="https://github.com/yourname" target="_blank">▶ GitHub アカウントはこちら</a>
+      AI API、Google API、Make、GAS、Next.js、FastAPIなどを組み合わせ、
+      実務で使える業務自動化システムを想定して作成しています。
     </p>
-</section>
+
+    <div class="works-grid">
+
+      <div class="work-card">
+        <h3>AI月次支援資料 自動生成システム</h3>
+
+        <p><strong>課題：</strong>月次資料作成に時間がかかり、数値確認・課題整理・資料転記が手作業になりやすい。</p>
+        <p><strong>解決：</strong>Google Sheetsの数値、打合せメモ、過去資料をもとにAIが資料ドラフトを生成。</p>
+        <p><strong>成果：</strong>月次資料の初稿作成を効率化し、Googleスライド出力までの自動化を想定。</p>
+
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Google Sheets API</span>
+          <span class="tag">Google Slides API</span>
+          <span class="tag">AI API</span>
+        </div>
+
+        <a class="btn" href="projects/ai-monthly-report.html">詳細を見る</a>
+      </div>
+
+      <div class="work-card">
+        <h3>営業日報AI自動化</h3>
+
+        <p><strong>課題：</strong>営業日報の作成・共有に手間がかかり、内容整理や次回アクションの抜け漏れが発生しやすい。</p>
+        <p><strong>解決：</strong>Gmail本文をMakeで取得し、ChatGPTでJSON化。GAS経由でGoogle Sheetsへ保存し、Slackへ通知。</p>
+        <p><strong>成果：</strong>日報作成・共有フローを自動化し、営業活動の記録と共有を効率化。</p>
+
+        <div class="tags">
+          <span class="tag">Make</span>
+          <span class="tag">GAS</span>
+          <span class="tag">Gmail</span>
+          <span class="tag">Google Sheets</span>
+          <span class="tag">Slack</span>
+          <span class="tag">OpenAI API</span>
+        </div>
+
+        <a class="btn" href="projects/ai-daily-report.html">詳細を見る</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>できること</h2>
+    <div class="lead-box">
+      「AIを使って何ができるか」ではなく、現場の手作業・属人化・転記作業をどう減らすかを重視して設計します。
+    </div>
+
+    <ul>
+      <li>AIを使った文章生成・要約・分類・JSON化</li>
+      <li>Gmail、Google Sheets、Google Slides、Slackを組み合わせた業務自動化</li>
+      <li>Next.js / FastAPIによるWebアプリ開発</li>
+      <li>Make / GASを使った低コストな業務フロー構築</li>
+      <li>既存のExcel・スプレッドシート業務の自動化設計</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>スキル</h2>
+
+    <div class="skills">
+      <span class="skill">AI業務自動化</span>
+      <span class="skill">ChatGPT / OpenAI API</span>
+      <span class="skill">Claude / Gemini</span>
+      <span class="skill">Make</span>
+      <span class="skill">Google Apps Script</span>
+      <span class="skill">Google Sheets API</span>
+      <span class="skill">Google Slides API</span>
+      <span class="skill">Next.js</span>
+      <span class="skill">React</span>
+      <span class="skill">TypeScript</span>
+      <span class="skill">Python</span>
+      <span class="skill">FastAPI</span>
+      <span class="skill">PostgreSQL</span>
+      <span class="skill">Supabase</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>プロフィール</h2>
+    <table>
+      <tr>
+        <th>対応領域</th>
+        <td>AI活用、業務自動化、Webアプリ開発、Google API連携、業務改善支援</td>
+      </tr>
+      <tr>
+        <th>得意分野</th>
+        <td>日報作成、資料作成、データ集計、スプレッドシート連携、通知自動化</td>
+      </tr>
+      <tr>
+        <th>開発スタイル</th>
+        <td>業務課題の整理から、構成検討、プロトタイプ作成、実装まで対応</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>リンク</h2>
+    <p>
+      <a href="projects.html">▶ 成果物一覧を見る</a>
+    </p>
+    <p>
+      <a href="https://github.com/taru3211" target="_blank">▶ GitHubアカウント</a>
+    </p>
+  </section>
+
+</main>
 
 <footer>
-    © Taru3211 Portfolio
+  © Taru3211 Portfolio
 </footer>
 
 </body>
