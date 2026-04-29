@@ -70,6 +70,57 @@
       font-weight: bold;
     }
 
+    .screenshot-block {
+      margin-top: 24px;
+    }
+
+    .screenshot-label {
+      display: inline-block;
+      background: #eaf2ff;
+      color: #1e3c72;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .screenshot-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 8px 0 8px;
+      color: #1f2937;
+    }
+
+    .screenshot-description {
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    .screenshot-img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      display: block;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    .point-list {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      padding: 18px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .point-list strong {
+      color: #1e3c72;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -176,12 +227,53 @@
 
   <section>
     <h2>5. 画面・スクリーンショット</h2>
-    <p>
-      ※必要に応じて、Makeのシナリオ画面、Google Sheetsの保存結果、Slack投稿結果のスクリーンショットを掲載します。
-    </p>
 
-    <div class="flow">
-      Makeシナリオ画面 / Google Sheets保存結果 / Slack通知結果
+    <div class="screenshot-block">
+      <span class="screenshot-label">Makeシナリオ画面</span>
+
+      <div class="screenshot-title">
+        Gmail受信を起点に、AIで日報化してGoogle Sheetsへ保存する自動化フロー
+      </div>
+
+      <p class="screenshot-description">
+        Gmailで受信したメール本文をMakeで取得し、ChatGPT APIに送信。
+        AIが日報形式に整理した結果をJSONとして扱い、GAS経由でGoogle Sheetsへ保存する構成です。
+      </p>
+
+      <img
+        src="../images/make.png"
+        alt="Makeで構築した営業日報AI自動化フロー"
+        class="screenshot-img"
+      >
+
+      <div class="point-list">
+        <strong>処理の流れ</strong><br>
+        ① Gmailにてメールを受信<br>
+        ② Makeで検知し、HTTPモジュールからChatGPT APIへ送信<br>
+        ③ AIの出力をJSONとして整形<br>
+        ④ GASのWebhookへ送信<br>
+        ⑤ Google Sheetsへ保存し、後続のSlack通知に活用
+      </div>
+    </div>
+
+    <div class="screenshot-block">
+      <span class="screenshot-label">出力結果（想定）</span>
+
+      <div class="screenshot-title">
+        日報データを蓄積し、Slackへ定時共有
+      </div>
+
+      <p class="screenshot-description">
+        Google Sheetsに保存した日報データをもとに、1日分の対応内容をまとめてSlackへ投稿する構成です。
+        顧客名、対応概要、次回アクション、リスク、所要時間などをチーム内で確認しやすい形に整理します。
+      </p>
+
+      <div class="flow">
+        Google Sheets保存 → 1日分を集計 → Slackへ定時投稿<br><br>
+        ・対応内容の共有漏れを防止<br>
+        ・日報フォーマットを標準化<br>
+        ・次回アクションやリスクを見える化
+      </div>
     </div>
   </section>
 
@@ -227,9 +319,6 @@
     </p>
     <p>
       <a href="../projects.html">▶ 成果物一覧へ</a>
-    </p>
-    <p>
-      <a href="https://github.com/yourname/repository" target="_blank">▶ GitHubリポジトリ</a>
     </p>
   </section>
 
